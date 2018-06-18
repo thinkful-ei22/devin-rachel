@@ -1,4 +1,4 @@
-/* global cuid */
+/* global cuid, store */
 'use strict';
 
 const Item = (function () {
@@ -16,6 +16,11 @@ const Item = (function () {
         };
 
         return item;
+    };
+
+    const findById = function(id){
+
+        return store.items.find(item => item.id === id);
     };
 
     return { 

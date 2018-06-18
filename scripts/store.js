@@ -1,4 +1,4 @@
-/* global cuid */
+/* global cuid, Item*/
 'use strict';
 
 
