@@ -15,6 +15,10 @@ const store = (function () {
 
   const searchTerm = '';
 
+  const findById = function(id){
+    return this.items.find(item => item.id === id);
+  };
+
   const addItem = function(name){
     try{
       Item.validateName(name);
@@ -25,8 +29,14 @@ const store = (function () {
     }
   };
 
+  const findAndToggleChecked = function(id){
+    const item = this.findById(id);
+    item.checked = !item.checked;
+  };
+
   return {
-    items, hideCheckedItems, searchTerm
+    items, hideCheckedItems, searchTerm,
+    findById, addItem, findAndToggleChecked
   };
 
 }() );

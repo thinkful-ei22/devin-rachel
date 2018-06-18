@@ -8,7 +8,6 @@ const Item = (function () {
         }
     };
     const create = function(name) {
-        
         const item = {
             id: cuid(),
             name: name,
@@ -16,11 +15,6 @@ const Item = (function () {
         };
 
         return item;
-    };
-
-    const findById = function(id){
-
-        return store.items.find(item => item.id === id);
     };
 
     return { 
