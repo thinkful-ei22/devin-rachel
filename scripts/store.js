@@ -34,9 +34,18 @@ const store = (function () {
     item.checked = !item.checked;
   };
 
+  const findAndUpdateName = function(id, newName){
+    try{
+      Item.validateName(name);
+      this.items.findById(id).name = newName;
+    }catch(e){
+      console.log(`Cannot update name: ${e.message}`);
+    }
+  };
+
   return {
     items, hideCheckedItems, searchTerm,
-    findById, addItem, findAndToggleChecked
+    findById, addItem, findAndToggleChecked, findAndUpdateName
   };
 
 }() );
