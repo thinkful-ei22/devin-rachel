@@ -53,7 +53,7 @@ const store = (function () {
 
   return {
     items, hideCheckedItems, searchTerm,
-    findById, addItem, findAndToggleChecked, findAndUpdateName
+    findById, addItem, findAndToggleChecked, findAndUpdateName, findAndDelete
   };
 
 }() );
