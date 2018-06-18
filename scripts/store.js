@@ -44,16 +44,17 @@ const store = (function () {
   };
 
   const findAndDelete = function(id){
-   const index = this.items.findIndex(item => item.id === id);
-    this.items.splice(index, 1);
+    // //This works too
+    // const index = this.items.findIndex(item => item.id === id);
+    // this.items.splice(index, 1);
  
-    // >>>> How to use filter when store.items is const?
-    //this.items.filter(item => item.id !== id); 
+    // >>>> Why does filter work? Isn't this.items const???
+    this.items = this.items.filter(item => item.id !== id);
   };
 
   const toggleCheckedFilter = function(){
     this.hideCheckedItems = !this.hideCheckedItems; 
-  }
+  };
 
   return {
     items, hideCheckedItems, searchTerm,
