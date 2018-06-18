@@ -56,9 +56,14 @@ const store = (function () {
     this.hideCheckedItems = !this.hideCheckedItems; 
   };
 
+  const setSearchTerm = function(newTerm){
+    this.searchTerm = newTerm;
+  }
+
   return {
     items, hideCheckedItems, searchTerm,
-    findById, addItem, findAndToggleChecked, findAndUpdateName, findAndDelete, toggleCheckedFilter
+    findById, addItem, findAndToggleChecked, findAndUpdateName, 
+    findAndDelete, toggleCheckedFilter, setSearchTerm
   };
 
 }() );
