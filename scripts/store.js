@@ -58,7 +58,7 @@ const store = (function () {
 
   const setSearchTerm = function(newTerm){
     this.searchTerm = newTerm;
-  }
+  };
 
   return {
     items, hideCheckedItems, searchTerm,

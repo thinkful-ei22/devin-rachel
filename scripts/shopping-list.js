@@ -116,14 +116,15 @@ const shoppingList = (function(){
   
   function handleToggleFilterClick() {
     $('.js-filter-checked').click(() => {
-      store.handleToggleFilterClick();
+      store.toggleCheckedFilter();
       render();
     });
   }
   
   function handleShoppingListSearch() {
     $('.js-shopping-list-search-entry').on('keyup', event => {
-      store.setSearchTerm();
+      const searchTerm = $(event.currentTarget).val();
+      store.setSearchTerm(searchTerm);
       render();
     });
   }
